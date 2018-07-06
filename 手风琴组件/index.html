@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				text-align: center;
+			}
+			.box{
+				padding: 0;
+				margin: 0;
+				width: 1300;
+				height: 500px;
+				text-align: center;
+				display: inline-block;
+			}
+			.box li{
+				list-style: none;
+				width: 240px;
+				height: 500px;
+				float: left;
+				display: inline;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		</div>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+		<script>
+			var $li=$(".box li");
+			for(var i=0;i<$li.length;i++){
+				$li.eq(i).css("background-image","url(img/"+(i+1)+".jpg)");
+			}
+			$li.mouseenter(function(){
+				$(this).stop().animate({width:"800px"}).siblings().stop().animate({width:"100px"});
+			});
+			$li.mouseout(function(){
+				$li.stop().animate({width:"240px"});
+			});
+		</script>
+	</body>
+</html>
